@@ -55,6 +55,13 @@ mlops_job_project/
 > ✅ All visualizations are based on real-time public API data and can be refreshed at any time.
 
 ---
+## 📄 Reports
+
+- [Story 1 – Role Distribution](docs/Story_1.pdf)
+- [Story 2 – Top 10 Companies](docs/Story_2.pdf)
+- [Story 3 – Job Locations in Germany](docs/Story_3.pdf)
+- [Story 4 – Salary and Benefits Insights](docs/Story_4.pdf)
+
 
 ## 📦 Installation
 
