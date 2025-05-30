@@ -55,14 +55,21 @@ mlops_job_project/
 > ✅ All visualizations are based on real-time public API data and can be refreshed at any time.
 
 ---
-## 📖 Storytelling Reports
+## 📊 Storytelling Reports
 
 Explore interactive visual reports generated from real-time job data:
 
-- [Story 1 – Role Distribution](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%201.pdf)
-- [Story 2 – Top 10 Hiring Companies](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%202.pdf)
-- [Story 3 – Job Locations in Germany](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%203.pdf)
-- [Story 4 – Salary & Benefits Insights](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%204.pdf)
+- [Story 1 – Overview & Methodology](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%201.pdf)  
+  _Project introduction, data pipeline, and title/company overview._
+
+- [Story 2 – Top 10 Hiring Companies](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%202.pdf)  
+  _MY Humancapital GmbH dominates job postings across the platform._
+
+- [Story 3 – Job Locations in Germany](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%203.pdf)  
+  _Munich, Berlin, Hamburg, and Karlsruhe show the highest demand._
+
+- [Story 4 – Top Job Titles in Demand](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%204.pdf)  
+  _Frequent roles include Softwareentwickler, IT Support, and Finance Manager._
 
 
 ## 📦 Installation
