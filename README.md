@@ -73,24 +73,16 @@ pip install -r requirements.txt
 python main.py
 ```
 📎 Tech Stack
-Python 3.11 + requests, json, os
 
-Tableau Public Story
+**Python 3.11 + requests, json, os**
 
-VS Code + GitHub
+**Tableau Public Story**
 
-Arbeitnow Job API
+**VS Code + GitHub**
 
-🎯 Use Case
-Perfect for:
+**Arbeitnow Job API**
 
-Showcasing ETL + BI skills
 
-Practicing API integration + automated data cleaning
-
-Visual storytelling for tech hiring insights
-
-Adding a portfolio-ready project to GitHub or LinkedIn
 
 
 ## 📢 Stay Connected!  
