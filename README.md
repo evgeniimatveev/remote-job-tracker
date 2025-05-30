@@ -21,7 +21,7 @@ It includes a clean **ETL pipeline** and an interactive **Tableau story** to hig
 ✅ **Rerunnable** in seconds to update snapshots
 
 ---
-
+```bash
 ## 🧱 Project Structure
 
 mlops_job_project/
@@ -41,6 +41,7 @@ mlops_job_project/
 ├── requirements.txt ← Python packages
 └── README.md ← You are here!
 
+```
 ---
 
 ## 🧠 Tableau Story Highlights
@@ -70,6 +71,7 @@ pip install -r requirements.txt
 
 # Run the full flow
 python main.py
+```
 📎 Tech Stack
 Python 3.11 + requests, json, os
 
