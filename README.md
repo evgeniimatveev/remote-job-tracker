@@ -59,10 +59,10 @@ mlops_job_project/
 
 Explore interactive visual reports generated from real-time job data:
 
-- [Story 1 – Role Distribution](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%201.pdf))
-- [Story 2 – Top 10 Hiring Companies](storytelling_reports/Story_2.pdf)
-- [Story 3 – Job Locations in Germany](storytelling_reports/Story_3.pdf)
-- [Story 4 – Salary & Benefits Insights](storytelling_reports/Story_4.pdf)
+- [Story 1 – Role Distribution](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%201.pdf)
+- [Story 2 – Top 10 Hiring Companies](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%202.pdf)
+- [Story 3 – Job Locations in Germany](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%203.pdf)
+- [Story 4 – Salary & Benefits Insights](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%204.pdf)
 
 
 ## 📦 Installation
