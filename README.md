@@ -32,7 +32,7 @@ mlops_job_project/
 │
 ├── dashboards/
 │ └── tableau/ ← .twb file with full story
-│
+│  ├──tableau//storytelling_reports/ ← PDF Story Slides
 ├── jobs/
 │ ├── arbeitnow_fetcher.py ← API pull logic
 │ ├── exporter.py ← JSON & CSV writer
