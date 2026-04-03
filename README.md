@@ -1,4 +1,4 @@
-# 🇩🇪 Germany Remote Job Tracker (May 2025)
+# Germany Remote Job Tracker (May 2025)
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![Tableau](https://img.shields.io/badge/Tableau-Story-blueviolet?logo=tableau)
