@@ -2,7 +2,13 @@
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![Tableau](https://img.shields.io/badge/Tableau-Story-blueviolet?logo=tableau)
+![ETL](https://img.shields.io/badge/ETL-Pipeline-orange)
+![API](https://img.shields.io/badge/API-Arbeitnow-green)
+![Data](https://img.shields.io/badge/Data-JSON→CSV-yellow)
+![Automation](https://img.shields.io/badge/Automation-Enabled-purple)
+![Storytelling](https://img.shields.io/badge/Data-Storytelling-blue)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 
 This project automates the collection and visualization of **remote-friendly tech jobs in Germany**  
