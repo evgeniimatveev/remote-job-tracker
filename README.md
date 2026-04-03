@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![Tableau](https://img.shields.io/badge/Tableau-Story-blueviolet?logo=tableau)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-MIT-green)
+
 
 This project automates the collection and visualization of **remote-friendly tech jobs in Germany**  
 using the [Arbeitnow Job API](https://www.arbeitnow.com/api/job-board-api).  
@@ -55,21 +55,51 @@ mlops_job_project/
 > ✅ All visualizations are based on real-time public API data and can be refreshed at any time.
 
 ---
-## 📊 Storytelling Reports
+## 📊 Tableau Storytelling Reports
 
-Explore interactive visual reports generated from real-time job data:
+Explore structured visual insights generated from real-time job data using Python + Tableau:
 
-- [Story 1 – Overview & Methodology](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%201.pdf)  
-  _Project introduction, data pipeline, and title/company overview._
+### 📘 Story 1 — Overview & Methodology
+[Tech Job Trends in May 2025](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Tech%20Job%20Trends%20in%20May%202025.pdf)
 
-- [Story 2 – Top 10 Hiring Companies](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%202.pdf)  
-  _MY Humancapital GmbH dominates job postings across the platform._
+_Project introduction, data pipeline, and overall hiring landscape._
 
-- [Story 3 – Job Locations in Germany](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%203.pdf)  
-  _Munich, Berlin, Hamburg, and Karlsruhe show the highest demand._
+---
 
-- [Story 4 – Top Job Titles in Demand](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Story%204.pdf)  
-  _Frequent roles include Softwareentwickler, IT Support, and Finance Manager._
+### 🏢 Story 2 — Top Hiring Companies
+[Top Hiring Companies](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Top%20Hiring%20Companies.pdf)
+
+_Key Insight:_  
+MY Humancapital GmbH dominates the dataset, accounting for nearly half of all listings.
+
+_Interpretation:_  
+This suggests either aggressive hiring or centralized job aggregation.
+
+---
+
+### 🌍 Story 3 — Job Locations in Germany
+[Where Are the Jobs Located?](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Where%20Are%20the%20Jobs%20Located_.pdf)
+
+_Key Insight:_  
+Munich leads by a wide margin, followed by Berlin, Hamburg, and Karlsruhe.
+
+_Interpretation:_  
+Remote-friendly tech hiring is concentrated in major German tech hubs.
+
+---
+
+### 💼 Story 4 — Roles in Demand
+[What Roles Are in Demand?](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/What%20Roles%20Are%20in%20Demand_.pdf)
+
+_Key Insight:_  
+Software, IT support, and finance roles appear most frequently.
+
+_Interpretation:_  
+Demand spans both technical and business-oriented positions.
+
+---
+
+> 💡 All reports are generated from live API data and can be refreshed via the ETL pipeline.
 
 
 ## 📦 Installation
