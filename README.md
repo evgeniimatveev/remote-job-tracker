@@ -8,7 +8,7 @@
 ![Automation](https://img.shields.io/badge/Automation-Enabled-purple)
 ![Storytelling](https://img.shields.io/badge/Data-Storytelling-blue)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-MIT-green)
+
 
 
 This project automates the collection and visualization of **remote-friendly tech jobs in Germany**  
