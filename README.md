@@ -16,7 +16,9 @@ Automates collection and visualization of **remote-friendly tech jobs in Germany
 
 Pipeline reruns in seconds to capture a fresh market snapshot at any time.
 
-**Pipeline:** `Arbeitnow API → JSON → Python ETL → CSV → Tableau Story (4 slides)`
+  **Pipeline:** `Arbeitnow API → JSON → Python ETL → CSV → Tableau Story (4 slides)`
+
+  **Snapshot:** 100 listings · May 2025 · Germany tech market · 5% truly remote
 
 ---
 
