@@ -20,14 +20,15 @@ Pipeline reruns in seconds to capture a fresh market snapshot at any time.
 
 ---
 
-## Key Findings (May 2025 snapshot)
+  ## Key Findings (May 2025 snapshot — 100 listings)
 
-| Topic | Insight |
-|-------|---------|
-| Top Employer | MY Humancapital GmbH posted ~50% of all listings |
-| Top Locations | Munich leads, followed by Berlin, Hamburg, Karlsruhe |
-| Top Roles | Softwareentwickler, IT-Support, Finance Manager |
-| Market pattern | Remote hiring concentrated in major German tech hubs |
+  | Topic | Insight |
+  |-------|---------|
+  | Top Employer | MY Humancapital GmbH — **47 listings (47%)** of all 100 |
+  | Top Location | Munich leads with **36 listings (36%)**, then Berlin 11%, Hamburg 4% |
+  | Remote reality | Only **5 of 100 listings (5%)** truly remote — market is mostly on-site |
+  | Top Roles | Softwareentwickler, IT-Support, Finance Manager |
+  | Market pattern | Top 5 companies hold **72%** of all listings — highly concentrated market |
 
 ---
 
