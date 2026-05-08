@@ -1,4 +1,4 @@
-# Germany Remote Job Tracker (May 2025)
+# Germany Remote Job Tracker — Python · Tableau · REST API
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![Tableau](https://img.shields.io/badge/Tableau-Story-blueviolet?logo=tableau)
@@ -6,138 +6,137 @@
 ![API](https://img.shields.io/badge/API-Arbeitnow-green)
 ![Data](https://img.shields.io/badge/Data-JSON→CSV-yellow)
 ![Automation](https://img.shields.io/badge/Automation-Enabled-purple)
-![Storytelling](https://img.shields.io/badge/Data-Storytelling-blue)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-
-
-
-This project automates the collection and visualization of **remote-friendly tech jobs in Germany**  
-using the [Arbeitnow Job API](https://www.arbeitnow.com/api/job-board-api).  
-It includes a clean **ETL pipeline** and an interactive **Tableau story** to highlight key hiring trends.
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 ---
 
-## 🚀 Features
+## What This Project Does
 
-🔄 **Live ETL Pipeline** (JSON → CSV)  
-🔎 **Filters job data** with Python (company, location, title)  
-📦 **Structured outputs**: raw `.json` + clean `.csv`  
-📊 **Tableau Story** — top employers, cities, job roles  
-🖱️ **Interactive visual storytelling**  
-✅ **Rerunnable** in seconds to update snapshots
+Automates collection and visualization of **remote-friendly tech jobs in Germany** via the Arbeitnow Job API. Python ETL pipeline pulls live data → filters → exports to CSV → feeds Tableau storytelling dashboard.
+
+Pipeline reruns in seconds to capture a fresh market snapshot at any time.
+
+**Pipeline:** `Arbeitnow API → JSON → Python ETL → CSV → Tableau Story (4 slides)`
 
 ---
-```bash
-## 🧱 Project Structure
 
-mlops_job_project/
-│
-├── data/
-│ ├── raw/ ← Raw API output (arbeitnow_raw.json)
-│ └── processed/ ← Clean CSV for Tableau (jobs_clean.csv)
-│
-├── dashboards/
-│ └── tableau/ ← .twb file with full story
-│  ├──tableau//storytelling_reports/ ← PDF Story Slides
-├── jobs/
-│ ├── arbeitnow_fetcher.py ← API pull logic
-│ ├── exporter.py ← JSON & CSV writer
-│
-├── main.py ← Main script: fetch → clean → export
-├── requirements.txt ← Python packages
-└── README.md ← You are here!
+## Key Findings (May 2025 snapshot)
 
+| Topic | Insight |
+|-------|---------|
+| Top Employer | MY Humancapital GmbH posted ~50% of all listings |
+| Top Locations | Munich leads, followed by Berlin, Hamburg, Karlsruhe |
+| Top Roles | Softwareentwickler, IT-Support, Finance Manager |
+| Market pattern | Remote hiring concentrated in major German tech hubs |
+
+---
+
+## ETL Pipeline — Python
+
+```python
+# jobs/arbeitnow_fetcher.py — fetch jobs from API
+import requests, json
+
+def fetch_jobs(url="https://www.arbeitnow.com/api/job-board-api"):
+    response = requests.get(url)
+    data = response.json()
+    jobs = data.get("data", [])
+    return jobs
+
+# jobs/exporter.py — export to JSON + CSV
+import csv
+
+def export_csv(jobs, path="data/processed/jobs_clean.csv"):
+    keys = ["title", "company_name", "location", "remote", "url"]
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=keys, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(jobs)
 ```
----
-
-## 🧠 Tableau Story Highlights
-
-| 📌 Topic              | Insights                                               |
-|----------------------|--------------------------------------------------------|
-| 🏢 **Top Employers**   | One company (MY Humancapital GmbH) posted ~50% jobs   |
-| 🌍 **Top Locations**   | Munich, Berlin, Hamburg lead in remote hiring         |
-| 💼 **Top Job Titles**  | Softwareentwickler, IT-Support, Finance Manager       |
-
-> ✅ All visualizations are based on real-time public API data and can be refreshed at any time.
 
 ---
-## 📊 Tableau Storytelling Reports
 
-Explore structured visual insights generated from real-time job data using Python + Tableau:
+## Tableau Storytelling Reports
 
-### 📘 Story 1 — Overview & Methodology
+### Story 1 — Overview & Methodology
 [Tech Job Trends in May 2025](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Tech%20Job%20Trends%20in%20May%202025.pdf)
 
-_Project introduction, data pipeline, and overall hiring landscape._
+Project introduction, data pipeline, and overall hiring landscape.
 
 ---
 
-### 🏢 Story 2 — Top Hiring Companies
+### Story 2 — Top Hiring Companies
 [Top Hiring Companies](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Top%20Hiring%20Companies.pdf)
 
-_Key Insight:_  
-MY Humancapital GmbH dominates the dataset, accounting for nearly half of all listings.
-
-_Interpretation:_  
-This suggests either aggressive hiring or centralized job aggregation.
+**Key Insight:** MY Humancapital GmbH dominates the dataset, accounting for nearly half of all listings — suggests either aggressive hiring or centralized job aggregation.
 
 ---
 
-### 🌍 Story 3 — Job Locations in Germany
+### Story 3 — Job Locations in Germany
 [Where Are the Jobs Located?](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/Where%20Are%20the%20Jobs%20Located_.pdf)
 
-_Key Insight:_  
-Munich leads by a wide margin, followed by Berlin, Hamburg, and Karlsruhe.
-
-_Interpretation:_  
-Remote-friendly tech hiring is concentrated in major German tech hubs.
+**Key Insight:** Munich leads by a wide margin, followed by Berlin, Hamburg, and Karlsruhe. Remote-friendly tech hiring is concentrated in major German tech hubs.
 
 ---
 
-### 💼 Story 4 — Roles in Demand
+### Story 4 — Roles in Demand
 [What Roles Are in Demand?](https://github.com/evgeniimatveev/remote-job-tracker/blob/main/dashboards/tableau/storytelling_reports/What%20Roles%20Are%20in%20Demand_.pdf)
 
-_Key Insight:_  
-Software, IT support, and finance roles appear most frequently.
-
-_Interpretation:_  
-Demand spans both technical and business-oriented positions.
+**Key Insight:** Software, IT support, and finance roles appear most frequently — demand spans both technical and business-oriented positions.
 
 ---
 
-> 💡 All reports are generated from live API data and can be refreshed via the ETL pipeline.
+## Project Structure
 
+```
+mlops_job_project/
+├── jobs/
+│   ├── arbeitnow_fetcher.py    # API pull logic
+│   └── exporter.py             # JSON & CSV writer
+├── data/
+│   ├── raw/                    # arbeitnow_raw.json
+│   └── processed/              # jobs_clean.csv
+├── dashboards/tableau/
+│   ├── Who's Hiring in Germany.twbx
+│   └── storytelling_reports/   # PDF story slides
+├── main.py                     # fetch → clean → export
+└── requirements.txt
+```
 
-## 📦 Installation
+---
+
+## How to Run
 
 ```bash
-git clone https://github.com/your-username/mlops_job_project.git
-cd mlops_job_project
+# 1. Clone the repo
+git clone https://github.com/evgeniimatveev/remote-job-tracker.git
+cd remote-job-tracker
 
-# (Optional) create a virtual environment
+# 2. Set up environment
 conda create -n job_env python=3.11 -y
 conda activate job_env
-
-# Install requirements
 pip install -r requirements.txt
 
-# Run the full flow
+# 3. Run full pipeline
 python main.py
+# Output: data/processed/jobs_clean.csv → open in Tableau
 ```
-📎 Tech Stack
 
-**Python 3.11 + requests, json, os**
+---
 
-**Tableau Public Story**
+## Stack
 
-**VS Code + GitHub**
+| Layer | Technology |
+|-------|-----------|
+| Data Source | Arbeitnow Job API (REST) |
+| ETL | Python (requests, csv, json) |
+| Visualization | Tableau (4-slide story) |
+| Output Formats | JSON + CSV |
 
-**Arbeitnow Job API**
+---
 
+## Connect
 
-
-
-## 📢 Stay Connected!  
-💻 **GitHub Repository:** [Evgenii Matveev](https://github.com/evgeniimatveev)  
-🌐 **Portfolio:** [Data Science Portfolio](https://www.datascienceportfol.io/evgeniimatveevusa)  
-📌 **LinkedIn:** [Evgenii Matveev](https://www.linkedin.com/in/evgenii-matveev-510926276/)  
+- GitHub: [evgeniimatveev](https://github.com/evgeniimatveev)
+- Portfolio: [datascienceportfol.io/evgeniimatveevusa](https://www.datascienceportfol.io/evgeniimatveevusa)
+- LinkedIn: [Evgenii Matveev](https://www.linkedin.com/in/evgenii-matveev-510926276/)
