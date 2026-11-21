@@ -1,0 +1,22 @@
+name: Files check
+
+# Automatic and light: nothing is fetched from the network.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Scripts compile, README links work, Key Findings match the saved snapshot
+        run: python .github/scripts/check_repo.py
