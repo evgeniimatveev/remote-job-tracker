@@ -4,8 +4,6 @@ name: Live API run (manual)
 # Runs the real pipeline against the live Arbeitnow API (the result is not committed).
 on:
   workflow_dispatch:
-  push:
-    branches: [ci/checks-and-cleanup]   # TEMPORARY: to test before merge
 
 permissions:
   contents: read
