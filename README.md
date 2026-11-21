@@ -27,9 +27,9 @@ Pipeline reruns in seconds to capture a fresh market snapshot at any time.
   | Topic | Insight |
   |-------|---------|
   | Top Employer | MY Humancapital GmbH — **47 listings (47%)** of all 100 |
-  | Top Location | Munich leads with **36 listings (36%)**, then Berlin 11%, Hamburg 4% |
+  | Top Location | Munich leads with **36 listings (36%)**, then Berlin 15% (two spellings: 11 + 4), Hamburg 4% |
   | Remote reality | Only **5 of 100 listings (5%)** truly remote — market is mostly on-site |
-  | Top Roles | Softwareentwickler, IT-Support, Finance Manager |
+  | Top Roles | Softwareentwickler, IT-Support, Finance Manager (grouping from the Tableau story; in the raw titles the most frequent one is IT-Administrator, 6 listings) |
   | Market pattern | Top 5 companies hold **72%** of all listings — highly concentrated market |
 
 ---
@@ -37,25 +37,23 @@ Pipeline reruns in seconds to capture a fresh market snapshot at any time.
 ## ETL Pipeline — Python
 
 ```python
-# jobs/arbeitnow_fetcher.py — fetch jobs from API
-import requests, json
-
-def fetch_jobs(url="https://www.arbeitnow.com/api/job-board-api"):
-    response = requests.get(url)
-    data = response.json()
-    jobs = data.get("data", [])
+# jobs/arbeitnow_fetcher.py — fetch jobs from the API (excerpt)
+def fetch_arbeitnow_jobs(query="data analyst"):
+    url = "https://www.arbeitnow.com/api/job-board-api"
+    response = requests.get(url, timeout=10)
+    response.raise_for_status()
+    all_jobs = response.json().get("data", [])
+    jobs = [j for j in all_jobs if query.lower() in j.get("title", "").lower()]
+    # the unfiltered-by-keyword list is saved to data/raw/arbeitnow_raw.json
     return jobs
 
-# jobs/exporter.py — export to JSON + CSV
-import csv
-
-def export_csv(jobs, path="data/processed/jobs_clean.csv"):
-    keys = ["title", "company_name", "location", "remote", "url"]
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=keys, extrasaction="ignore")
-        writer.writeheader()
-        writer.writerows(jobs)
+# jobs/exporter.py — export to CSV
+def save_to_csv(jobs, filename):
+    df = pd.DataFrame(jobs)
+    df.to_csv(filename, index=False, encoding="utf-8-sig")
 ```
+
+`main.py` calls the fetcher with an empty keyword (every listing), keeps four fields (`title`, `company`, `location`, `url`) and writes `data/processed/jobs_clean.csv`.
 
 ---
 
@@ -92,7 +90,8 @@ Project introduction, data pipeline, and overall hiring landscape.
 ## Project Structure
 
 ```
-mlops_job_project/
+remote-job-tracker/
+├── .github/                    # CI
 ├── jobs/
 │   ├── arbeitnow_fetcher.py    # API pull logic
 │   └── exporter.py             # JSON & CSV writer
@@ -103,6 +102,7 @@ mlops_job_project/
 │   ├── Who's Hiring in Germany.twbx
 │   └── storytelling_reports/   # PDF story slides
 ├── main.py                     # fetch → clean → export
+├── .gitignore
 └── requirements.txt
 ```
 
@@ -124,6 +124,15 @@ pip install -r requirements.txt
 python main.py
 # Output: data/processed/jobs_clean.csv → open in Tableau
 ```
+
+---
+
+## Continuous Integration
+
+| Workflow | When | What it does |
+|----------|------|--------------|
+| [`files-check.yml`](.github/workflows/files-check.yml) | every push and pull request | Scripts compile, no `.pyc` files tracked, README links lead to existing files, and the **Key Findings are re-computed from the saved May 2025 snapshot** |
+| [`live-run.yml`](.github/workflows/live-run.yml) | **manual**: Actions → *Live API run (manual)* → *Run workflow* | Runs `main.py` against the live Arbeitnow API and checks that the API still returns the fields the pipeline needs and that the CSV matches the raw JSON |
 
 ---
 
